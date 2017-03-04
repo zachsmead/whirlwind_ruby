@@ -1,15 +1,15 @@
-bank_data = []
+users = []
 
 valid = false
 
-1.times do
-	customer_hash = {}
+10.times do
+	customer = {}
 
 	puts "Please enter a first name."
-	customer_hash[:first_name] = gets.chomp
+	customer[:first_name] = gets.chomp
 
 	puts "Please enter a last name."
-	customer_hash[:last_name] = gets.chomp
+	customer[:last_name] = gets.chomp
 
 	puts "Please enter an email address."
 	email = gets.chomp
@@ -19,35 +19,39 @@ valid = false
 		email = gets.chomp
 	end
 
-	customer_hash[:email] = email
+	customer[:email] = email
 
-	customer_hash[:account_number] = rand.to_s[2..11]
-	bank_data << customer_hash
+	customer[:account_number] = rand.to_s[2..11]
+	users << customer
 end
 
-p bank_data
+p users
+
+
+users.each do |user|
+	puts "FIRST NAME: #{user[:first_name]}"
+	puts "LAST NAME: #{user[:last_name]}"
+	puts "EMAIL: #{user[:email]}"
+	puts "ACCOUNT NUMBER: #{user[:account_number]}"
+end
 
 
 
-# bank_data.each do |user|
-# 	puts "FIRST NAME: #{user[:first_name]}"
-# 	puts "LAST NAME: #{user[:last_name]}"
-# 	puts "EMAIL: #{user[:email]}"
-# 	puts "ACCOUNT NUMBER: #{user[:account_number]}"
-# end
+puts "Please enter your account number."
+account_number = gets.chomp
 
 
+user_found = false
+users.each do |user|
+	if account_number.to_s == user[:account_number]
+		user_found = true
+		puts "FIRST NAME: #{user[:first_name]}"
+		puts "LAST NAME: #{user[:last_name]}"
+		puts "EMAIL: #{user[:email]}"
+		puts "ACCOUNT NUMBER: #{user[:account_number]}"
+	end
+end
 
-# puts "Please enter your account number."
-# account_number = gets.chomp
-
-# bank_data.each do |user|
-# 	if account_number.to_s == user[:account_number]
-# 		puts "FIRST NAME: #{user[:first_name]}"
-# 		puts "LAST NAME: #{user[:last_name]}"
-# 		puts "EMAIL: #{user[:email]}"
-# 		puts "ACCOUNT NUMBER: #{user[:account_number]}"
-# 	else
-# 		puts "INVALID NUMBER"
-# 	end
-# end
+if user_found == false
+	puts "INVALID NUMBER!"
+end

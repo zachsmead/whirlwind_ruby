@@ -1,26 +1,27 @@
-bank_data = []
+users = []
 
 5.times do
 	customer_hash = {}
 	puts "Please enter a first name."
 	customer_hash[:first_name] = gets.chomp
+
 	puts "Please enter a last name."
 	customer_hash[:last_name] = gets.chomp
+
 	puts "Please enter an email address."
 	customer_hash[:email] = gets.chomp
+
 	customer_hash[:account_number] = rand.to_s[2..11]
-	bank_data << customer_hash
+
+	users << customer_hash
 end
 
-p bank_data
 
-
-
-bank_data.each do |item|
-	puts "FIRST NAME: #{item[:first_name]}"
-	puts "LAST NAME: #{item[:last_name]}"
-	puts "EMAIL: #{item[:email]}"
-	puts "ACCOUNT NUMBER: #{item[:account_number]}"
+users.each do |user|
+	puts "FIRST NAME: #{user[:first_name]}"
+	puts "LAST NAME: #{user[:last_name]}"
+	puts "EMAIL: #{user[:email]}"
+	puts "ACCOUNT NUMBER: #{user[:account_number]}"
 end
 
 

@@ -8,16 +8,12 @@ end
 
 
 
-p food_array
-
-
-
 food_array.each do |food|
 	puts "I love #{food}."
 end
 
 food_array.each_with_index do |food, i|
-	puts (i + 1).to_s + ". " + food
+	puts "#{(i + 1)}: #{food}"
 end
 
 

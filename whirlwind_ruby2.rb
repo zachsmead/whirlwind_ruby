@@ -7,7 +7,7 @@ count = 0
 
 result = false
 unless result
-    puts "Hello"
+  puts "Hello"
 end
 
 sam_recipes = 11
@@ -16,9 +16,9 @@ sam_crepes = true
 sally_french = false
 
 if sam_recipes > 10 && sally_languages > 5
-    puts "you should date!"
+  puts "You should date!"
 end
 
 if sam_crepes == true || sally_french == true
-    puts "you should marry!"
+  puts "You should marry!"
 end
